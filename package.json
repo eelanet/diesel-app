@@ -1,0 +1,22 @@
+{
+  "name": "diesel-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eelanet/diesel-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eelanet/diesel-app/issues"
+  },
+  "homepage": "https://eelanet.github.io/diesel-app",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
