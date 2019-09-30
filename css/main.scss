@@ -1,0 +1,421 @@
+$lightBlue: #e4eaff;
+$darkBlue: #39405b;
+$cardBlue: #1761a0;
+$borderRadius: 10px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $darkBlue;
+  font-size: 1.2rem;
+  font-family: "Titillium Web", sans-serif !important;
+}
+
+#header {
+  width: 100%;
+  min-height: auto;
+  background: #d1d9e7;
+
+  .logo-container {
+    padding: 10px;
+
+    .logo {
+      width: 120px;
+      height: 80px;
+    }
+  }
+
+  .title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    height: auto;
+    color: $darkBlue;
+    text-align: center;
+    margin: 10px 15px;
+  }
+
+  .off-canvas-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+
+    button {
+      width: 40px;
+      height: 40px;
+      background: #00000000;
+      color: $cardBlue;
+      border: solid 3px $cardBlue;
+      font-size: 1.5rem;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 600;
+      border-radius: 50%;
+      padding: 5px 0 10px 0;
+    }
+  }
+}
+
+#main {
+  background: #fff;
+  width: 100%;
+  min-height: 100vh;
+
+  // Aside
+  .aside {
+    background: $darkBlue;
+    width: 50%;
+
+    .close-button {
+      color: #fff;
+    }
+
+    .info-container {
+      .info-box {
+        background: $lightBlue;
+        width: 70%;
+        margin: 50px auto;
+        border-radius: $borderRadius;
+
+        ul {
+          padding: 10px;
+          list-style: none;
+
+          li {
+            padding: 10px 0;
+            line-height: 1.2;
+            color: $darkBlue;
+          }
+        }
+      }
+
+      .basics {
+        width: 70%;
+        margin: 50px auto;
+
+        p {
+          color: $lightBlue;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  // App
+  #app {
+    width: 100%;
+    padding-bottom: 50px;
+
+    .forms-grid {
+      margin: 10px;
+
+      .forms {
+        margin: 30px auto 0 auto;
+
+        .form-container {
+          width: 270px;
+          height: 400px;
+          background: $cardBlue;
+          color: $lightBlue;
+          padding: 15px 10px;
+          border-radius: $borderRadius;
+          margin: 0 auto;
+
+          h2 {
+            text-align: center;
+            font-size: 1.8rem;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+            padding-top: 5px;
+          }
+
+          label {
+            color: $lightBlue;
+            font-size: 1.2rem;
+
+            .input-group {
+              input {
+                text-align: right;
+                border-top-left-radius: $borderRadius;
+                border-bottom-left-radius: $borderRadius;
+              }
+
+              span {
+                width: 100px;
+                border-top-right-radius: $borderRadius;
+                border-bottom-right-radius: $borderRadius;
+              }
+            }
+          }
+        }
+
+        .kilometers {
+          height: 170px;
+        }
+      }
+
+      .forms-calc {
+        div {
+          width: 270px;
+          height: 170px;
+          margin: 0px auto;
+          padding-top: 40px;
+
+          button {
+            width: 100%;
+            height: 80px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 100px;
+            color: $cardBlue;
+            background: #00000000;
+            border: 7px solid $cardBlue;
+            box-shadow: 2px 2px 7px 0px #0000008c;
+
+            &:hover {
+              background: $cardBlue;
+              color: $lightBlue;
+            }
+          }
+        }
+      }
+    }
+
+    // Results
+    .results-grid {
+      margin: 10px;
+
+      .results {
+        margin: 30px auto 0 auto;
+
+        .card-container {
+          width: 270px;
+          height: 300px;
+          color: $lightBlue;
+          border-radius: $borderRadius;
+          border: $cardBlue solid 5px;
+          margin: 0 auto;
+        }
+      }
+
+      .results-title {
+        padding: 10px 0;
+
+        h2 {
+          text-align: center;
+          font-size: 2.8rem;
+          font-weight: 600;
+          color: $darkBlue;
+        }
+      }
+
+      .image-card {
+        background: #00000000;
+
+        .img-card {
+          div {
+            width: 60%;
+            margin: 0 auto;
+            padding-top: 50px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          h3 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #589958;
+            text-align: center;
+            padding-top: 10px;
+          }
+        }
+      }
+
+      .results-card {
+        background: $cardBlue;
+        padding: 10px 5px;
+
+        label {
+          color: $lightBlue;
+          font-size: 1.2rem;
+
+          .input-group {
+            input {
+              text-align: right;
+              border-top-left-radius: $borderRadius;
+              border-bottom-left-radius: $borderRadius;
+              background: #fff;
+            }
+
+            span {
+              width: 100px;
+              border-top-right-radius: $borderRadius;
+              border-bottom-right-radius: $borderRadius;
+            }
+          }
+        }
+      }
+
+      .graph-card {
+        padding-top: 15px;
+
+        .graph {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  width: 100%;
+  background: #d1d9e7;
+  height: 60px;
+
+  .copyright {
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: $darkBlue;
+  }
+}
+
+// Media query mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width: 501px) and (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+// Widescreens
+@include mediaXl {
+  #header {
+    .title {
+      font-size: 1.9rem;
+    }
+  }
+
+  #app {
+    .form-container {
+      width: 350px !important;
+    }
+
+    .forms-calc {
+      div {
+        width: 350px !important;
+      }
+    }
+
+    .results {
+      .card-container {
+        width: 350px !important;
+        height: 350px !important;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+// Tablets
+@include mediaMd {
+  #header {
+    .title {
+      font-size: 1.7rem;
+    }
+  }
+
+  #main {
+    .aside {
+      width: 60% !important;
+
+      .info-container {
+        font-size: 1.1rem;
+
+        .basics {
+          p {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #app {
+    .form-container {
+      width: 350px !important;
+    }
+
+    .forms-calc {
+      div {
+        width: 350px !important;
+      }
+    }
+
+    .results {
+      .card-container {
+        width: 350px !important;
+        height: 350px !important;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  #header {
+    .title {
+      font-size: 1.1rem;
+      padding: 10px 0;
+    }
+  }
+
+  #main {
+    .aside {
+      width: 80%;
+
+      .info-container {
+        font-size: 1rem;
+
+        .basics {
+          p {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    #app {
+      .results-title {
+        h2 {
+          font-size: 2.5rem !important;
+        }
+      }
+    }
+  }
+
+  #footer {
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
+}
