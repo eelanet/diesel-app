@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kannattaako hankkia dieselauto?</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="images/logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="logo-container cell small-6 medium-6 large-6">
+                    <a href="index.html">
+                        <img class="logo" src="images/logo-name.png" alt="logo kannattaako diesel">
+                    </a>
+                </div>
+                <div class="off-canvas-btn cell small-6 medium-6 large-6">
+                    <button type="button" class="button" data-toggle="offCanvas">i</button>
+                </div>
+                <div class="cell small-12 medium-12 large-12">
+                    <h1 class="title small-12 medium-12 large-12">Vertaa diesel- ja bensa-autojen polttoainekustannuksia
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="grid-container">
+        <aside id="offCanvas" class="aside off-canvas position-left" data-off-canvas>
+            <div class="info-container off-canvas-content" data-off-canvas-content>
+                <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="info-box">
+                    <ul>
+                        <li>1. Täytä polttoaineiden ja ajoneuvojen tiedot</li>
+                        <li>2. Kerro paljonko autolla ajetaan vuodessa</li>
+                        <li>3. Paina: Laske kustannukset</li>
+                    </ul>
+                </div>
+                <div class="basics">
+                    <p>Sovelluksen tarkoitus on auttaa tekemään päätös diesel- ja bensa-auton hankinnan välillä.</p>
+                    <p>Sovellus on yksinkertainen laskuri, joka vertaa autojen kustannuksia. Sovellukseen syötetään
+                        aluksi
+                        molempien autojen tiedot. Tämän jälkeen laskuri laskee autojen kustannukset vuositasolla ja
+                        kertoo
+                        kannattaako dieselauto omistaa.</p>
+                </div>
+            </div>
+        </aside>
+        <section id="app">
+            <div class="forms-grid grid-x">
+                <div class="forms forms-diesel cell small-12 medium-6 large-4">
+                    <div class="form-container">
+                        <h2>Diesel</h2>
+                        <label>Dieselin hinta
+                            <div class="input-group">
+                                <input id="price-diesel" class="input-group-field" type="text" placeholder="1.350">
+                                <span class="input-group-label">€/Litra</span>
+                            </div>
+                        </label>
+                        <h3>Dieselauton tiedot</h3>
+                        <label>Kulutus
+                            <div class="input-group">
+                                <input id="consumption-diesel" class="input-group-field" type="text" placeholder="5.5">
+                                <span class="input-group-label">L/100km</span>
+                            </div>
+                        </label>
+                        <label>Ajoneuvovero
+                            <div class="input-group">
+                                <input id="tax-diesel" class="input-group-field" type="text" placeholder="620">
+                                <span class="input-group-label">€/vuosi</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="forms forms-gas cell small-12 medium-6 large-4">
+                    <div class="form-container">
+                        <h2>Bensa</h2>
+                        <label>Bensan hinta
+                            <div class="input-group">
+                                <input id="price-gas" class="input-group-field" type="text" placeholder="1.550">
+                                <span class="input-group-label">€/Litra</span>
+                            </div>
+                        </label>
+                        <h3>Bensa-auton tiedot</h3>
+                        <label>Kulutus
+                            <div class="input-group">
+                                <input id="consumption-gas" class="input-group-field" type="text" placeholder="7.5">
+                                <span class="input-group-label">L/100km</span>
+                            </div>
+                        </label>
+                        <label>Ajoneuvovero
+                            <div class="input-group">
+                                <input id="tax-gas" class="input-group-field" type="text" placeholder="210">
+                                <span class="input-group-label">€/vuosi</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="forms forms-km cell small-12 medium-6 large-4">
+                    <div class="form-container kilometers">
+                        <h2>Kilometrit</h2>
+                        <label>Paljonko ajat
+                            <div class="input-group">
+                                <input id="km-year" class="input-group-field" type="text" placeholder="30000">
+                                <span class="input-group-label">km/vuosi</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="forms forms-calc cell small-12 medium-6 large-4">
+                    <div>
+                        <a href="#costs-results">
+                            <button id="btn-calculate" type="button" class="primary button">Laske kustannukset</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results  -->
+            <div id="costs-results" class="results-grid grid-x" style="display:none">
+                <div class="results-title cell small-12 medium-12 large-12">
+                    <h2>Kustannukset</h2>
+                </div>
+                <div class="results cell small-12 medium-6 large-4">
+                    <div class="card-container image-card">
+                        <div class="img-card">
+                            <div>
+                                <img class="logo" src="images/logo-name.png" alt="" srcset="">
+                            </div>
+                            <h3 id="title-boolean">Kyllä</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="results cell small-12 medium-6 large-4">
+                    <div class="card-container results-card">
+                        <label>Dieselauton kulut
+                            <div class="input-group">
+                                <input id="costs-diesel" class="input-group-field" type="text" value="0" readonly>
+                                <span class="input-group-label">€/vuosi</span>
+                            </div>
+                        </label>
+                        <label>Bensa-auton kulut
+                            <div class="input-group">
+                                <input id="costs-gas" class="input-group-field" type="text" value="0" readonly>
+                                <span class="input-group-label">€/vuosi</span>
+                            </div>
+                        </label>
+                        <label><span id="costs-difference-label">Kustannusten erotus</span>
+                            <div class="input-group">
+                                <input id="costs-difference" class="input-group-field" type="text" value="0" readonly>
+                                <span class="input-group-label">€/vuosi</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="results cell small-12 medium-6 large-4">
+                    <div class="card-container graph-card">
+                        <div class="graph">
+                            <canvas id="myChart" width="270" height="270"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="copyright">Copyright © eelanet 2019 All rights reserved.</div>
+    </footer>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
